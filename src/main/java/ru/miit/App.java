@@ -1,1 +1,1 @@
-package ru.miit;public class App {    public static void main(String[] args) {        System.out.println("Hello, world");    }}
+package ru.miit;public class App {    public static void main(String[] args) {        System.out.println("Hello, world");        RollingStock rollingStock = new RollingStock(123, 2, 5);    }}
