@@ -1,9 +1,9 @@
 package ru.miit;
 
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class RollingStock {
     @NotNull(message = "Name connot be null")
@@ -13,7 +13,8 @@ public class RollingStock {
     @Min(value= 100, message = "Wagon number must be under 100")
     private int number;
 
-    @Size(min = 5, max = 100, message = "Rolling stock must be contain wagon count between 10 and 100")
+    @Min(value = 5, message = "Rolling stock must be contain wagon count between 10 and 100")
+    @Max(value = 100, message = "Rolling stock must be contain wagon count between 10 and 100")
     private int wagonsCount;
 
     public RollingStock(int id, int number, int wagonsCount) {
@@ -44,5 +45,10 @@ public class RollingStock {
 
     public void setWagonsCount(int wagonsCount) {
         this.wagonsCount = wagonsCount;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

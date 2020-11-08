@@ -1,0 +1,30 @@
+<constraint-mappings xmlns="http://jboss.org/xml/ns/javax/validation/mapping" version="1.1">
+    <bean class="ru.miit.RollingStock" ignore-annotations="true">
+        <field name="id">
+            <constraint annotation="javax.validation.constraints.NotNull">
+                <message>Name connot be null</message>
+            </constraint>
+        </field>
+        <field name="number">
+            <constraint annotation="javax.validation.constraints.NotNull">
+                <message>Name connot be null</message>
+            </constraint>
+            <constraint annotation="javax.validation.constraints.Min">
+                <element name="message">Wagon number must be under 100</element>
+                <element name="value">100</element>
+            </constraint>
+        </field>
+        <field name="wagonsCount">
+            <constraint annotation="javax.validation.constraints.Min">
+                <element name="value">5</element>
+                <element name="message">Rolling stock must be contain wagon count between 10 and 100</element>
+
+            </constraint>
+            <constraint annotation="javax.validation.constraints.Max">
+                <element name="value">100</element>
+                <element name="message">Wagon number must be under 100</element>
+
+            </constraint>
+        </field>
+    </bean>
+</constraint-mappings>
